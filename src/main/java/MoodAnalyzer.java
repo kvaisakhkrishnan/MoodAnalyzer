@@ -1,11 +1,8 @@
 public class MoodAnalyzer {
     String message;
     public String analyzeMood(){
-        System.out.println("Message Read");
-        if(message == null){
-            return "NA";
-        }
-        else{
+        try{
+            System.out.println("Message Read");
             String[] words = this.message.trim().split("\\s+");
             int mood = 1;
             for(String word : words){
@@ -20,6 +17,9 @@ public class MoodAnalyzer {
             else{
                 return "SAD";
             }
+        }
+        catch(Exception error){
+            return "HAPPY";
         }
     }
 

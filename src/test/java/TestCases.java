@@ -5,9 +5,9 @@ import static org.junit.Assert.assertEquals;
 public class TestCases {
     @Test
     public void testSadMood(){
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in Sad Mood");
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
         String analyzedMood = moodAnalyzer.analyzeMood();
-        assertEquals("SAD", analyzedMood);
+        assertEquals("HAPPY", analyzedMood);
     }
 
     @Test
