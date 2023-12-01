@@ -1,7 +1,7 @@
 public class MoodAnalyzer {
     String message;
-    public String analyzeMood(){
-        try{
+    public String analyzeMood() throws MoodAnalysisException{
+        if(message != null){
             System.out.println("Message Read");
             String[] words = this.message.trim().split("\\s+");
             int mood = 1;
@@ -18,8 +18,8 @@ public class MoodAnalyzer {
                 return "SAD";
             }
         }
-        catch(Exception error){
-            return "HAPPY";
+        else{
+            throw new MoodAnalysisException();
         }
     }
 

@@ -5,7 +5,12 @@ public class Driver {
         System.out.println("Enter Sentence to Analyze: ");
         String sentence = scanner.nextLine();
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer(sentence);
-        String mood = moodAnalyzer.analyzeMood();
-        System.out.println("Analyzed Mood is: " + mood);
+        try{
+            String mood = moodAnalyzer.analyzeMood();
+            System.out.println("Analyzed Mood is: " + mood);
+        }
+        catch(Exception err){
+            System.out.println(err.getMessage());
+        }
     }
 }
